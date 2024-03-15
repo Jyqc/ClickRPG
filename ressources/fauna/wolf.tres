@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Fauna" load_steps=2 format=3 uid="uid://dw831cc2au268"]
+
+[ext_resource type="Script" path="res://ressources/fauna/fauna.gd" id="1_ogmwe"]
+
+[resource]
+script = ExtResource("1_ogmwe")
+name = "Wolf"
+health = 200
