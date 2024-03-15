@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://dumb0fxvvybr3"]
+[gd_scene load_steps=5 format=3 uid="uid://dumb0fxvvybr3"]
 
-[ext_resource type="Script" path="res://scripts/dice.gd" id="1_d4hli"]
-[ext_resource type="Script" path="res://scripts/combat.gd" id="2_6p6g1"]
+[ext_resource type="Theme" uid="uid://38sxdk6fgi5p" path="res://ressources/themes/BigText.tres" id="1_3hk56"]
+[ext_resource type="Script" path="res://scripts/engines/dice_engine.gd" id="1_d4hli"]
+[ext_resource type="Script" path="res://scripts/engines/combat_engine.gd" id="2_6p6g1"]
+[ext_resource type="Script" path="res://scripts/engines/turn_engine.gd" id="4_gytap"]
 
 [node name="Main" type="Node"]
 
@@ -10,6 +12,8 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 88.0
+offset_right = 88.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -70,9 +74,8 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -304.0
-offset_top = -200.0
-offset_right = 304.0
+offset_left = -4.0
+offset_right = 4.0
 grow_horizontal = 2
 grow_vertical = 0
 
@@ -83,17 +86,12 @@ layout_mode = 2
 [node name="DiceOneLabel" type="RichTextLabel" parent="Gui/HBoxContainer/DiceOne"]
 unique_name_in_owner = true
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_3hk56")
 text = "0"
 
 [node name="DiceTwo" type="Panel" parent="Gui/HBoxContainer"]
@@ -102,18 +100,14 @@ layout_mode = 2
 
 [node name="DiceTwoLabel" type="RichTextLabel" parent="Gui/HBoxContainer/DiceTwo"]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(75, 75)
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_3hk56")
 text = "0"
 
 [node name="DiceThree" type="Panel" parent="Gui/HBoxContainer"]
@@ -123,17 +117,12 @@ layout_mode = 2
 [node name="DiceThreeLabel" type="RichTextLabel" parent="Gui/HBoxContainer/DiceThree"]
 unique_name_in_owner = true
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_3hk56")
 text = "0"
 
 [node name="RollButton" type="Button" parent="Gui"]
@@ -143,10 +132,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 50.0
-offset_top = 37.0
-offset_right = 204.0
-offset_bottom = 175.0
+offset_left = -464.0
+offset_top = 404.0
+offset_right = -310.0
+offset_bottom = 542.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -166,34 +155,34 @@ grow_vertical = 2
 text = "ROLL
 "
 
-[node name="FightButton" type="Button" parent="Gui"]
+[node name="SpawnButton" type="Button" parent="Gui"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -211.0
-offset_top = 37.0
-offset_right = -57.0
-offset_bottom = 175.0
+offset_left = 712.0
+offset_top = 404.0
+offset_right = 866.0
+offset_bottom = 542.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="FightText" type="RichTextLabel" parent="Gui/FightButton"]
+[node name="SpawnText" type="RichTextLabel" parent="Gui/SpawnButton"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -23.5
-offset_top = -12.0
-offset_right = 23.5
-offset_bottom = 12.0
+offset_left = -53.0
+offset_top = -13.0
+offset_right = 67.0
+offset_bottom = 11.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "FIGHT"
+text = "SPAWN BOSS"
 
 [node name="DiceTotal" type="Panel" parent="Gui"]
 custom_minimum_size = Vector2(100, 100)
@@ -203,10 +192,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -52.0
-offset_top = 233.0
-offset_right = 48.0
-offset_bottom = 333.0
+offset_left = -408.0
+offset_top = 300.0
+offset_right = -308.0
+offset_bottom = 400.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -226,36 +215,60 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "0"
 
-[node name="BossHp" type="Panel" parent="Gui"]
-custom_minimum_size = Vector2(100, 100)
+[node name="WaveHp" type="Panel" parent="Gui"]
+custom_minimum_size = Vector2(200, 100)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -52.0
-offset_top = -160.0
-offset_right = 48.0
-offset_bottom = -60.0
+offset_left = 664.0
+offset_top = 300.0
+offset_right = 864.0
+offset_bottom = 400.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="BossHpLabel" type="RichTextLabel" parent="Gui/BossHp"]
+[node name="WaveHpLabel" type="RichTextLabel" parent="Gui/WaveHp"]
 unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_3hk56")
+text = "0"
+
+[node name="AttackButton" type="Button" parent="Gui"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -11.0
-offset_top = -11.0
-offset_right = 29.0
-offset_bottom = 29.0
+offset_left = -968.0
+offset_top = 388.0
+offset_right = -814.0
+offset_bottom = 526.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "0"
+
+[node name="FightText" type="RichTextLabel" parent="Gui/AttackButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -29.0
+offset_top = -13.0
+offset_right = 38.0
+offset_bottom = 11.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "ATTACK"
 
 [node name="World" type="Node2D" parent="."]
 
@@ -269,5 +282,10 @@ script = ExtResource("1_d4hli")
 unique_name_in_owner = true
 script = ExtResource("2_6p6g1")
 
+[node name="TurnEngine" type="Node" parent="Engine"]
+unique_name_in_owner = true
+script = ExtResource("4_gytap")
+
 [connection signal="pressed" from="Gui/RollButton" to="Engine/DiceEngine" method="_on_roll_button_pressed"]
-[connection signal="pressed" from="Gui/FightButton" to="Engine/CombatEngine" method="_on_fight_button_pressed"]
+[connection signal="pressed" from="Gui/SpawnButton" to="Engine/CombatEngine" method="_on_spawn_button_pressed"]
+[connection signal="pressed" from="Gui/AttackButton" to="Engine/CombatEngine" method="_on_attack_button_pressed"]
