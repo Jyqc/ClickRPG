@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dumb0fxvvybr3"]
+[gd_scene load_steps=7 format=3 uid="uid://dumb0fxvvybr3"]
 
 [ext_resource type="Theme" uid="uid://38sxdk6fgi5p" path="res://ressources/themes/BigText.tres" id="1_3hk56"]
 [ext_resource type="Script" path="res://scripts/managers/engines/dice_engine.gd" id="1_d4hli"]
@@ -6,18 +6,34 @@
 [ext_resource type="Theme" uid="uid://d4c3aoo64ixiv" path="res://ressources/themes/MediumText.tres" id="2_lvnoi"]
 [ext_resource type="Script" path="res://scripts/managers/turn_manager.gd" id="4_gytap"]
 [ext_resource type="Script" path="res://scripts/managers/combat_manager.gd" id="5_320c1"]
-[ext_resource type="Script" path="res://scripts/managers/panel_manager.gd" id="5_511s0"]
 
 [node name="Main" type="Node"]
 
 [node name="Gui" type="Control" parent="."]
-unique_name_in_owner = true
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="LogBox" type="TextEdit" parent="Gui"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(1250, 0)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1408.0
+offset_top = -216.0
+grow_horizontal = 0
+grow_vertical = 0
+editable = false
+context_menu_enabled = false
+shortcut_keys_enabled = false
+scroll_smooth = true
 
 [node name="LeftPanel" type="VBoxContainer" parent="Gui"]
 custom_minimum_size = Vector2(500, 0)
@@ -105,20 +121,40 @@ grow_horizontal = 2
 grow_vertical = 2
 columns = 2
 
-[node name="CombatPanelButton" type="Button" parent="Gui/LeftPanel/PlayerMenu/GridContainer"]
+[node name="CombatModeButton" type="Button" parent="Gui/LeftPanel/PlayerMenu/GridContainer"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 theme = ExtResource("2_lvnoi")
 toggle_mode = true
 text = "Combat"
 
-[node name="TestButton" type="Button" parent="Gui/LeftPanel/PlayerMenu/GridContainer"]
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-theme = ExtResource("2_lvnoi")
-toggle_mode = true
-text = "Test
-"
+[node name="RightPanel" type="VBoxContainer" parent="Gui"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 512.0
+offset_top = 8.0
+offset_right = 1012.0
+offset_bottom = 825.0
+grow_horizontal = 0
+
+[node name="CenterPanel" type="HBoxContainer" parent="Gui"]
+custom_minimum_size = Vector2(1250, 500)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 1472.0
+offset_top = 292.0
+offset_right = 2722.0
+offset_bottom = 792.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
 
 [node name="MainPanel" type="PanelContainer" parent="Gui"]
 layout_mode = 1
@@ -130,8 +166,6 @@ offset_bottom = 856.0
 grow_horizontal = 0
 
 [node name="CombatPanel" type="VBoxContainer" parent="Gui/MainPanel"]
-unique_name_in_owner = true
-visible = false
 layout_mode = 2
 
 [node name="CombatInfosGrid" type="GridContainer" parent="Gui/MainPanel/CombatPanel"]
@@ -266,36 +300,6 @@ unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("2_lvnoi")
 
-[node name="TestPanel" type="VBoxContainer" parent="Gui/MainPanel"]
-unique_name_in_owner = true
-visible = false
-layout_mode = 2
-
-[node name="LogPanel" type="Panel" parent="Gui"]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -1408.0
-offset_top = -216.0
-grow_horizontal = 0
-grow_vertical = 0
-
-[node name="ScrollContainer" type="ScrollContainer" parent="Gui/LogPanel"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="LogBox" type="Label" parent="Gui/LogPanel/ScrollContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 4
-
 [node name="World" type="Node2D" parent="."]
 
 [node name="Managers" type="Node" parent="."]
@@ -310,9 +314,6 @@ script = ExtResource("1_d4hli")
 unique_name_in_owner = true
 script = ExtResource("2_6p6g1")
 
-[node name="PanelManager" type="Node" parent="Managers"]
-script = ExtResource("5_511s0")
-
 [node name="CombatManager" type="Node" parent="Managers"]
 unique_name_in_owner = true
 script = ExtResource("5_320c1")
@@ -321,8 +322,6 @@ script = ExtResource("5_320c1")
 unique_name_in_owner = true
 script = ExtResource("4_gytap")
 
-[connection signal="toggled" from="Gui/LeftPanel/PlayerMenu/GridContainer/CombatPanelButton" to="Managers/PanelManager" method="_on_combat_panel_button_toggled"]
-[connection signal="toggled" from="Gui/LeftPanel/PlayerMenu/GridContainer/TestButton" to="Managers/PanelManager" method="_on_test_button_toggled"]
 [connection signal="pressed" from="Gui/MainPanel/CombatPanel/HBoxContainer/PlayerSidePanel/SpawnButton" to="Managers/CombatManager" method="_on_spawn_button_pressed"]
 [connection signal="pressed" from="Gui/MainPanel/CombatPanel/HBoxContainer/PlayerSidePanel/AttackButton" to="Managers/CombatManager" method="_on_attack_button_pressed"]
 [connection signal="pressed" from="Gui/MainPanel/CombatPanel/HBoxContainer/PlayerSidePanel/UpgradeAttackButton" to="Managers/CombatManager" method="_on_upgrade_attack_button_pressed"]
