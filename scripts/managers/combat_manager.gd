@@ -4,7 +4,10 @@ extends Node
 @onready	var playerHpLabel = %PlayerHpLabel
 @onready	var playerAttackLabel = %PlayerAttackLabel
 <<<<<<< HEAD
+<<<<<<< HEAD
 @onready	var waveNameLabel = %WaveNameLabel
+=======
+>>>>>>> 63cc6be590aca8f9856419181b552cefb5d26c3d
 =======
 >>>>>>> 63cc6be590aca8f9856419181b552cefb5d26c3d
 @onready	var waveHpLabel = %WaveHpLabel
@@ -20,7 +23,10 @@ extends Node
 @export var waveHp:int
 @export var waveAttack:int
 <<<<<<< HEAD
+<<<<<<< HEAD
 @export var waveName:String
+=======
+>>>>>>> 63cc6be590aca8f9856419181b552cefb5d26c3d
 =======
 >>>>>>> 63cc6be590aca8f9856419181b552cefb5d26c3d
 @export var damage_done:int
@@ -38,7 +44,10 @@ func _ready():
 	waveHp = 0
 	waveAttack = 0
 <<<<<<< HEAD
+<<<<<<< HEAD
 	waveName = ""
+=======
+>>>>>>> 63cc6be590aca8f9856419181b552cefb5d26c3d
 =======
 >>>>>>> 63cc6be590aca8f9856419181b552cefb5d26c3d
 	damage_done = 0
@@ -49,10 +58,15 @@ func _ready():
 func _on_spawn_button_pressed():
 	spawnEngine.spawn_wave()
 <<<<<<< HEAD
+<<<<<<< HEAD
 	waveName = spawnEngine.waveName
 	waveHp = spawnEngine.waveHp
 	waveAttack = spawnEngine.waveAttack
 	waveNameLabel.text = waveName
+=======
+	waveHp = spawnEngine.waveHp
+	waveAttack = spawnEngine.waveAttack
+>>>>>>> 63cc6be590aca8f9856419181b552cefb5d26c3d
 =======
 	waveHp = spawnEngine.waveHp
 	waveAttack = spawnEngine.waveAttack
