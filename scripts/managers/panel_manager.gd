@@ -4,7 +4,7 @@ extends Node
 @onready var testPanel = %TestPanel
 @onready var activePanel = %Gui
 
-func _on_combat_panel_button_toggled(toggled_on):
+func _on_combat_panel_button_toggled(_toggled_on):
 	if activePanel == %Gui:
 		pass
 	else:
@@ -13,7 +13,7 @@ func _on_combat_panel_button_toggled(toggled_on):
 	combatPanel.visible = true
 	activePanel = combatPanel
 
-func _on_test_button_toggled(toggled_on):
+func _on_test_button_toggled(_toggled_on):
 	if activePanel == %Gui:
 		pass
 	else:

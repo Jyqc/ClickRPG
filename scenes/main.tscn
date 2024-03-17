@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://dumb0fxvvybr3"]
 
-[ext_resource type="Theme" uid="uid://38sxdk6fgi5p" path="res://ressources/themes/BigText.tres" id="1_3hk56"]
+[ext_resource type="Theme" uid="uid://b5sg61vgwhxmb" path="res://ressources/themes/BigText.tres" id="1_3hk56"]
 [ext_resource type="Script" path="res://scripts/managers/engines/dice_engine.gd" id="1_d4hli"]
 [ext_resource type="Script" path="res://scripts/managers/engines/spawn_engine.gd" id="2_6p6g1"]
 [ext_resource type="Theme" uid="uid://d4c3aoo64ixiv" path="res://ressources/themes/MediumText.tres" id="2_lvnoi"]
@@ -177,6 +177,12 @@ text = "0
 "
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Panel" type="Panel" parent="Gui/MainPanel/CombatPanel"]
+light_mask = 0
+visibility_layer = 0
+layout_mode = 2
+size_flags_vertical = 3
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Gui/MainPanel/CombatPanel"]
 layout_mode = 2
