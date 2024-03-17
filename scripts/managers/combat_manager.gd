@@ -3,7 +3,10 @@ extends Node
 # Unique names
 @onready	var playerHpLabel = %PlayerHpLabel
 @onready	var playerAttackLabel = %PlayerAttackLabel
+<<<<<<< HEAD
 @onready	var waveNameLabel = %WaveNameLabel
+=======
+>>>>>>> 63cc6be590aca8f9856419181b552cefb5d26c3d
 @onready	var waveHpLabel = %WaveHpLabel
 @onready	var waveAttackLabel = %WaveAttackLabel
 @onready	var diceLabel = %DiceLabel
@@ -16,7 +19,10 @@ extends Node
 @export var playerAttackLevel:int
 @export var waveHp:int
 @export var waveAttack:int
+<<<<<<< HEAD
 @export var waveName:String
+=======
+>>>>>>> 63cc6be590aca8f9856419181b552cefb5d26c3d
 @export var damage_done:int
 @export var damage_received:int
 
@@ -31,7 +37,10 @@ func _ready():
 	playerAttackLevel = 1
 	waveHp = 0
 	waveAttack = 0
+<<<<<<< HEAD
 	waveName = ""
+=======
+>>>>>>> 63cc6be590aca8f9856419181b552cefb5d26c3d
 	damage_done = 0
 	damage_received = 0
 	playerHpLabel.text = (str (playerHp))
@@ -39,10 +48,15 @@ func _ready():
 
 func _on_spawn_button_pressed():
 	spawnEngine.spawn_wave()
+<<<<<<< HEAD
 	waveName = spawnEngine.waveName
 	waveHp = spawnEngine.waveHp
 	waveAttack = spawnEngine.waveAttack
 	waveNameLabel.text = waveName
+=======
+	waveHp = spawnEngine.waveHp
+	waveAttack = spawnEngine.waveAttack
+>>>>>>> 63cc6be590aca8f9856419181b552cefb5d26c3d
 	waveHpLabel.text = (str (waveHp))
 	waveAttackLabel.text = (str (waveAttack))
 	inCombat = true

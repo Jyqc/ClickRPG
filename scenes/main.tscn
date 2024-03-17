@@ -1,12 +1,21 @@
+<<<<<<< HEAD
 [gd_scene load_steps=8 format=3 uid="uid://dumb0fxvvybr3"]
+=======
+[gd_scene load_steps=6 format=3 uid="uid://dumb0fxvvybr3"]
+>>>>>>> 63cc6be590aca8f9856419181b552cefb5d26c3d
 
 [ext_resource type="Theme" uid="uid://38sxdk6fgi5p" path="res://ressources/themes/BigText.tres" id="1_3hk56"]
 [ext_resource type="Script" path="res://scripts/managers/engines/dice_engine.gd" id="1_d4hli"]
 [ext_resource type="Script" path="res://scripts/managers/engines/spawn_engine.gd" id="2_6p6g1"]
+<<<<<<< HEAD
 [ext_resource type="Theme" uid="uid://d4c3aoo64ixiv" path="res://ressources/themes/MediumText.tres" id="2_lvnoi"]
 [ext_resource type="Script" path="res://scripts/managers/turn_manager.gd" id="4_gytap"]
 [ext_resource type="Script" path="res://scripts/managers/combat_manager.gd" id="5_320c1"]
 [ext_resource type="Script" path="res://scripts/managers/panel_manager.gd" id="5_511s0"]
+=======
+[ext_resource type="Script" path="res://scripts/managers/turn_manager.gd" id="4_gytap"]
+[ext_resource type="Script" path="res://scripts/managers/combat_manager.gd" id="5_320c1"]
+>>>>>>> 63cc6be590aca8f9856419181b552cefb5d26c3d
 
 [node name="Main" type="Node"]
 
@@ -19,6 +28,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+<<<<<<< HEAD
 [node name="LeftPanel" type="VBoxContainer" parent="Gui"]
 custom_minimum_size = Vector2(500, 0)
 layout_mode = 1
@@ -42,11 +52,17 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="PlayerInfosGrid" type="GridContainer" parent="Gui/LeftPanel/PlayerInfos"]
+=======
+[node name="LogBox" type="TextEdit" parent="Gui"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(1250, 0)
+>>>>>>> 63cc6be590aca8f9856419181b552cefb5d26c3d
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
+<<<<<<< HEAD
 offset_top = -144.0
 grow_horizontal = 2
 grow_vertical = 0
@@ -62,6 +78,47 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="TurnLabel" type="Label" parent="Gui/LeftPanel/PlayerInfos/PlayerInfosGrid"]
+=======
+offset_left = -4.0
+offset_top = -224.0
+offset_right = 4.0
+grow_horizontal = 2
+grow_vertical = 0
+editable = false
+context_menu_enabled = false
+shortcut_keys_enabled = false
+scroll_smooth = true
+
+[node name="LeftPanel" type="VBoxContainer" parent="Gui"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -518.0
+offset_right = 100.0
+offset_bottom = 518.0
+grow_vertical = 2
+
+[node name="PlayerHp" type="Panel" parent="Gui/LeftPanel"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HpTextLabel" type="RichTextLabel" parent="Gui/LeftPanel/PlayerHp"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_right = -128.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_3hk56")
+text = "Hp :"
+
+[node name="PlayerHpLabel" type="RichTextLabel" parent="Gui/LeftPanel/PlayerHp"]
+>>>>>>> 63cc6be590aca8f9856419181b552cefb5d26c3d
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
@@ -101,10 +158,12 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 128.0
 grow_horizontal = 2
 grow_vertical = 2
 columns = 2
 
+<<<<<<< HEAD
 [node name="CombatPanelButton" type="Button" parent="Gui/LeftPanel/PlayerMenu/GridContainer"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
@@ -286,15 +345,285 @@ grow_vertical = 0
 [node name="ScrollContainer" type="ScrollContainer" parent="Gui/LogPanel"]
 layout_mode = 1
 anchors_preset = 15
+=======
+[node name="Panel2" type="Panel" parent="Gui/LeftPanel"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Panel3" type="Panel" parent="Gui/LeftPanel"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Panel4" type="Panel" parent="Gui/LeftPanel"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Panel5" type="Panel" parent="Gui/LeftPanel"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Panel6" type="Panel" parent="Gui/LeftPanel"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Panel7" type="Panel" parent="Gui/LeftPanel"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Panel8" type="Panel" parent="Gui/LeftPanel"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Panel9" type="Panel" parent="Gui/LeftPanel"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Panel10" type="Panel" parent="Gui/LeftPanel"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="RightPanel" type="VBoxContainer" parent="Gui"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -518.0
+offset_bottom = 518.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="WaveHp" type="Panel" parent="Gui/RightPanel"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="WaveHpText" type="RichTextLabel" parent="Gui/RightPanel/WaveHp"]
+layout_mode = 1
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 2.0
+offset_right = -128.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_3hk56")
+text = "HP :"
+
+[node name="WaveHpLabel" type="RichTextLabel" parent="Gui/RightPanel/WaveHp"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 128.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_3hk56")
+text = "0"
+
+[node name="WaveAttack" type="Panel" parent="Gui/RightPanel"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="WaveAttackText" type="RichTextLabel" parent="Gui/RightPanel/WaveAttack"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_right = -128.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_3hk56")
+text = "AT :"
+
+[node name="WaveAttackLabel" type="RichTextLabel" parent="Gui/RightPanel/WaveAttack"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 128.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_3hk56")
+text = "0"
+
+[node name="Panel3" type="Panel" parent="Gui/RightPanel"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Panel4" type="Panel" parent="Gui/RightPanel"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Panel5" type="Panel" parent="Gui/RightPanel"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Panel6" type="Panel" parent="Gui/RightPanel"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Panel7" type="Panel" parent="Gui/RightPanel"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Panel8" type="Panel" parent="Gui/RightPanel"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Panel9" type="Panel" parent="Gui/RightPanel"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Panel10" type="Panel" parent="Gui/RightPanel"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="CenterPanel" type="HBoxContainer" parent="Gui"]
+custom_minimum_size = Vector2(1250, 200)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -625.0
+offset_top = -100.0
+offset_right = 625.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="AttackPanell" type="Panel" parent="Gui/CenterPanel"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="UpgradeAttackButton" type="Button" parent="Gui/CenterPanel/AttackPanell"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 31.0
+grow_horizontal = 2
+text = "Upgrade Attack"
+
+[node name="AttackInfos" type="Panel" parent="Gui/CenterPanel/AttackPanell"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="PlayerAttackText" type="RichTextLabel" parent="Gui/CenterPanel/AttackPanell/AttackInfos"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -50.0
+offset_right = 100.0
+offset_bottom = 50.0
+grow_vertical = 2
+theme = ExtResource("1_3hk56")
+text = " AT"
+
+[node name="PlayerAttackLabel" type="RichTextLabel" parent="Gui/CenterPanel/AttackPanell/AttackInfos"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+>>>>>>> 63cc6be590aca8f9856419181b552cefb5d26c3d
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -1.0
+grow_horizontal = 0
+grow_vertical = 2
+
+<<<<<<< HEAD
 [node name="LogBox" type="Label" parent="Gui/LogPanel/ScrollContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
+=======
+[node name="AttackButton" type="Button" parent="Gui/CenterPanel/AttackPanell"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -50.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Attack"
+
+[node name="SpawnButton" type="Button" parent="Gui/CenterPanel"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "SPAWN WAVE"
+
+[node name="DicePanel" type="HBoxContainer" parent="Gui"]
+custom_minimum_size = Vector2(1250, 200)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -625.0
+offset_right = 625.0
+offset_bottom = 200.0
+grow_horizontal = 2
+alignment = 1
+
+[node name="Dice" type="Panel" parent="Gui/DicePanel"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="DiceText" type="RichTextLabel" parent="Gui/DicePanel/Dice"]
+layout_mode = 0
+offset_right = 196.0
+offset_bottom = 40.0
+text = "              Dice result"
+
+[node name="DiceLabel" type="RichTextLabel" parent="Gui/DicePanel/Dice"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 76.0
+offset_top = 48.0
+offset_right = 196.0
+offset_bottom = 168.0
+theme = ExtResource("1_3hk56")
+text = "0"
+>>>>>>> 63cc6be590aca8f9856419181b552cefb5d26c3d
 
 [node name="World" type="Node2D" parent="."]
 
@@ -310,9 +639,12 @@ script = ExtResource("1_d4hli")
 unique_name_in_owner = true
 script = ExtResource("2_6p6g1")
 
+<<<<<<< HEAD
 [node name="PanelManager" type="Node" parent="Managers"]
 script = ExtResource("5_511s0")
 
+=======
+>>>>>>> 63cc6be590aca8f9856419181b552cefb5d26c3d
 [node name="CombatManager" type="Node" parent="Managers"]
 unique_name_in_owner = true
 script = ExtResource("5_320c1")
@@ -321,8 +653,14 @@ script = ExtResource("5_320c1")
 unique_name_in_owner = true
 script = ExtResource("4_gytap")
 
+<<<<<<< HEAD
 [connection signal="toggled" from="Gui/LeftPanel/PlayerMenu/GridContainer/CombatPanelButton" to="Managers/PanelManager" method="_on_combat_panel_button_toggled"]
 [connection signal="toggled" from="Gui/LeftPanel/PlayerMenu/GridContainer/TestButton" to="Managers/PanelManager" method="_on_test_button_toggled"]
 [connection signal="pressed" from="Gui/MainPanel/CombatPanel/HBoxContainer/PlayerSidePanel/SpawnButton" to="Managers/CombatManager" method="_on_spawn_button_pressed"]
 [connection signal="pressed" from="Gui/MainPanel/CombatPanel/HBoxContainer/PlayerSidePanel/AttackButton" to="Managers/CombatManager" method="_on_attack_button_pressed"]
 [connection signal="pressed" from="Gui/MainPanel/CombatPanel/HBoxContainer/PlayerSidePanel/UpgradeAttackButton" to="Managers/CombatManager" method="_on_upgrade_attack_button_pressed"]
+=======
+[connection signal="pressed" from="Gui/CenterPanel/AttackPanell/UpgradeAttackButton" to="Managers/CombatManager" method="_on_upgrade_attack_button_pressed"]
+[connection signal="pressed" from="Gui/CenterPanel/AttackPanell/AttackButton" to="Managers/CombatManager" method="_on_attack_button_pressed"]
+[connection signal="pressed" from="Gui/CenterPanel/SpawnButton" to="Managers/CombatManager" method="_on_spawn_button_pressed"]
+>>>>>>> 63cc6be590aca8f9856419181b552cefb5d26c3d

@@ -5,3 +5,7 @@ extends Node
 
 func roll_dice(d:int):
 	diceRollResult = randi_range(1,d)
+<<<<<<< HEAD
+=======
+
+>>>>>>> 63cc6be590aca8f9856419181b552cefb5d26c3d

@@ -5254,4 +5254,8 @@ cache/0/70/0/kerning_overrides/70/0 = Vector2(0, 0)
 
 [resource]
 default_font = SubResource("FontFile_w5men")
+<<<<<<< HEAD
 default_font_size = 40
+=======
+default_font_size = 50
+>>>>>>> 63cc6be590aca8f9856419181b552cefb5d26c3d
